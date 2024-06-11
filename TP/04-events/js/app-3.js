@@ -11,13 +11,4 @@ createApp({
      
     }
   },
-  methods: {
-    onclickbtn() {
-        if(this.count >= 10)
-          {
-            this.bgColor = 'red';
-          }
-        console.log(this.count);
-    }
-  }
 }).mount('#app')
