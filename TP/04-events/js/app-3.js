@@ -6,16 +6,16 @@ createApp({
     return {
       count: 0,
       text: "Cart: (0)",
-      bgColor: 'white',
+      bgColor: 'black',
+      imgChange : 'https://picsum.photos/200/300?image=0',
+     
     }
   },
   methods: {
     onclickbtn() {
-        this.count++;
         if(this.count >= 10)
           {
-            this.count = 10;
-            this.text = text.style.color = 'red';
+            this.bgColor = 'red';
           }
         console.log(this.count);
     }
