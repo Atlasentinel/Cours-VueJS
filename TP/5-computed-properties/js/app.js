@@ -32,5 +32,12 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
       {
         return this.fullName
         }
+    },
+    /*les hooks sont définits chacun dans une fonction 
+    qui est appelée automatiquement lorsque l'évènements 
+    est déclenché.*/
+    mounted()
+    {
+      console.log("App mounted");
     }
   }).mount('#app')
