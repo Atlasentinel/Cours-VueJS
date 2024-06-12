@@ -1,13 +1,13 @@
 <template>
   <div class="container py-5">
     <div class="mb-5 container">
-      <div class="card w-25">
-        <h4 class="d-flex justify-content">Ajouter une todo :</h4> <br>
-        <div class="card-body">
-          <input v-model="newTodoText" type="text" placeholder="Entrez le titre de la todo">
-        </div>
-        <div class="card-footer d-flex align-items-center">
-          <button @click="addTodo" class="btn btn-primary me-1">Ajouter +</button>
+      <div class="w-100 align-items-center">
+        <h4 class="d-flex justify-content  ">Ajouter une todo :</h4> <br>
+        <div class="card">
+          <div class="card-body w-100 d-flex gap-2">
+            <input v-model="newTodoText" type="text" class="input-group-text w-100" placeholder="Entrez le titre de la todo">
+            <button @click="addTodo" class="btn btn-primary me-1"><i class="fa-solid fa-plus"></i></button>
+          </div>
         </div>
       </div>
     </div>
@@ -30,12 +30,13 @@
         </div>
 
         <div v-if="!todo.editing">
-          <button @click="deleteTodo(todo.id)" class="btn btn-danger me-1">Supprimer</button>
-          <button @click="editTodo(todo.id)" class="btn btn-primary  me-1">Editer</button>
+          <button @click="deleteTodo(todo.id)" class="btn btn-danger me-1"><i class="fa-solid fa-trash"></i></button>
+          <button @click="editTodo(todo.id)" class="btn btn-primary  me-1"><i class="fa-solid fa-pen"></i></button>
         </div>
         <div v-else>
-          <button :disabled="!todo.text" @click="saveEdit(todo.id)" class="btn btn-success me-1">Sauvegarder</button>
-          <button @click="cancelEdit(todo.id)" class="btn btn-danger me-1">Annuler</button>
+          <button :disabled="!todo.text" @click="saveEdit(todo.id)" class="btn btn-success me-1"><i
+              class="fa-solid fa-check"></i></button>
+          <button @click="cancelEdit(todo.id)" class="btn btn-danger me-1"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </li>
     </ul>
@@ -79,10 +80,10 @@ export default {
           text: this.newTodoText.trim(),
           done: false,
           editing: false
-         
+
         });
-        this.newTodoText = true ;
-      
+        this.newTodoText = true;
+
       }
     }
   },
